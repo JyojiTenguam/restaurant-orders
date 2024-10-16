@@ -30,7 +30,7 @@ class InventoryMapping:
         for ingredient, amount in recipe.items():
             if ingredient not in self.inventory:
                 return False
-            if self.inventory[ingredient] < amount:
+            if self.inventory.get(ingredient, 0) < amount:
                 return False
         return True
 
